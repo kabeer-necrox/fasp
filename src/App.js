@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import User from "./Useer";
 import Menu from "./Menu";
+import Students from "./Students";
 
 function App() {
   let data = "kabeer necrox"
@@ -10,6 +11,10 @@ function App() {
   {  
     data = "necrox"
     alert(data)
+  }
+
+  function getData(e){
+    console.log(e.target.value)
   }
   return (
     <>
@@ -21,6 +26,20 @@ function App() {
 
       <div className="menu">
         <Menu />
+       
+      </div>
+
+      <div className="Students">
+        <Students name="pakistan"/>
+        <Students name="india"/>
+        <Students name="imrica"/>
+        <Students name="afghan"/>
+        <Students email="necrox@test.com" />
+      </div>
+
+
+      <div className="inputData">
+        <input type="text" placeholder="enter you data" onChange={getData}/>
       </div>
     </>
   );
