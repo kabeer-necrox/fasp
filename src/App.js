@@ -1,48 +1,35 @@
-import logo from "./logo.svg";
-import "./App.css";
-import User from "./Useer";
-import Menu from "./Menu";
-import Students from "./Students";
+import react, { useState } from "react";
 
 function App() {
-  let data = "kabeer necrox"
-
-  function Apple()
-  {  
-    data = "necrox"
-    alert(data)
-  }
-
-  function getData(e){
-    console.log(e.target.value)
+  const [data, setData] = useState(null);
+  const [print, setPrint] = useState(false);
+  function getData(val) {
+    console.log(val.target.value);
+    setData(val.target.value);
   }
   return (
-    <>
-      <div className="App">
-       <h1>{data}</h1>
-
-        <button onClick={()=>Apple()}>click me</button>
-      </div>
-
-      <div className="menu">
-        <Menu />
-       
-      </div>
-
-      <div className="Students">
-        <Students name="pakistan"/>
-        <Students name="india"/>
-        <Students name="imrica"/>
-        <Students name="afghan"/>
-        <Students email="necrox@test.com" />
-      </div>
-
-
-      <div className="inputData">
-        <input type="text" placeholder="enter you data" onChange={getData}/>
-      </div>
-    </>
+    <div>
+      {
+        print?
+        <h1>data</h1>
+        :null
+      }
+      <h1>{data}</h1>
+      <input
+        type="text"
+        placeholder="enter your data here"
+        onChange={getData}
+      />
+      <button onClick={()=> setPrint(true)}>print data</button>
+    </div>
   );
 }
 
 export default App;
+
+
+
+
+
+
+
