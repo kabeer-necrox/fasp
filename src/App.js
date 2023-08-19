@@ -1,24 +1,21 @@
-import react, { useState } from "react";
-
+import User from "./User";
+import Members from "./Members";
 function App() {
- const [status, setStatus] = react.useState(true);
-  
+
+  function getData(){
+    alert('hello from app')
+  }
   return (
     <div>
-     {
-      status? <h1>hello world!!!</h1>:null
-     }
-
-     <button  onClick={()=>setStatus(!true)}>toggle</button>
+    <User data={getData}/>
+    <User data={getData}/>
+    <User data={getData}/>
+    <User data={getData}/>
+    <div style={{float:'right'}}>
+      <Members data={getData}/>
+    </div>
     </div>
   );
 }
 
 export default App;
-
-
-
-
-
-
-
